@@ -2,11 +2,11 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 unames = ['user_id', 'gender', 'age', 'occupation', 'zip']
-users = pd.read_table('ml-1m/users.dat', sep='::', header=None, names=unames)
+users = pd.read_table('datasets/ml-1m/users.dat', sep='::', header=None, names=unames)
 rnames = ['user_id', 'movie_id', 'rating', 'timestamp']
-ratings = pd.read_table('ml-1m/movies.dat', sep='::', header=None, names=rnames)
+ratings = pd.read_table('datasets/ml-1m/movies.dat', sep='::', header=None, names=rnames)
 mnames = ['movie_id', 'title', 'genres']
-movies = pd.read_table('ml-1m/ratings.dat', sep='::', header=None, names=mnames)
+movies = pd.read_table('datasets/ml-1m/ratings.dat', sep='::', header=None, names=mnames)
 data = pd.merge(pd.merge(users, ratings), movies[1:1000])
 data[data.user_id == 1]         #查看用户id为1，对所有电影的评分.
 
